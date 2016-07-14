@@ -44,12 +44,12 @@
 
     <CheckBox
 
-        android:id="@+id/whipped_cream_checkbox"
+        android:id="@+id/cream_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="24dp"
         android:layout_marginBottom="10dp"
-        android:text="Whipped Cream"
+        android:text="Cream"
         android:textSize="16sp"/>
 
     <CheckBox

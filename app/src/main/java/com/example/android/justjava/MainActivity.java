@@ -49,21 +49,21 @@ public class MainActivity extends ActionBarActivity {
         String name = nameField.getText().toString();
         Log.v("MainActivity", "Name: " + name);
 
-        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
-        boolean hasWhippedCream = whippedCreamCheckBox. isChecked();
-        Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
-
-        CheckBox ChocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
-        boolean hasChocolate = ChocolateCheckBox. isChecked();
-        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
+        CheckBox CreamCheckBox = (CheckBox) findViewById(R.id.cream_checkbox);
+        boolean hasCream = CreamCheckBox. isChecked();
+        Log.v("MainActivity", "Has cream: " + hasCream);
 
         CheckBox SugarCheckBox = (CheckBox) findViewById(R.id.sugar_checkbox);
         boolean hasSugar = SugarCheckBox. isChecked();
         Log.v("MainActivity", "Has sugar: " + hasSugar);
 
+        CheckBox ChocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean hasChocolate = ChocolateCheckBox. isChecked();
+        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
+
         int price = calculatePrice();
 
-        String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate, hasSugar);
+        String priceMessage = createOrderSummary(name, price, hasCream, hasSugar, hasChocolate);
         displayMessage(priceMessage);
 
         calculatePrice();
@@ -79,11 +79,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-    private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate, boolean addSugar){
+    private String createOrderSummary(String name, int price, boolean addCream, boolean addSugar, boolean addChocolate){
         String priceMessage = "Name: " + name;
-        priceMessage += "\nAdd whipped cream? " + addWhippedCream;
-        priceMessage += "\nAdd chocolate? " + addChocolate;
+        priceMessage += "\nAdd cream? " + addCream;
         priceMessage += "\nAdd sugar? " + addSugar;
+        priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
         priceMessage += "\nTotal: $" + price;
         priceMessage += "\nThank you and have a nice day!";
