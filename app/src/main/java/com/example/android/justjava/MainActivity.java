@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -44,6 +45,10 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        EditText nameField = (EditText)findViewById(R.id.name_field);
+        String name = nameField.getText().toString();
+        Log.v("MainActivity", "Name: " + name);
+
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox. isChecked();
         Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
@@ -57,7 +62,8 @@ public class MainActivity extends ActionBarActivity {
         Log.v("MainActivity", "Has sugar: " + hasSugar);
 
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, hasSugar);
+
+        String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate, hasSugar);
         displayMessage(priceMessage);
 
         calculatePrice();
@@ -65,7 +71,6 @@ public class MainActivity extends ActionBarActivity {
 
     /**
      * Calculates the price of the order.
-     *
      * @return total price
      */
     private int calculatePrice() {
@@ -74,8 +79,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate, boolean addSugar){
-        String priceMessage = "Name: ShinConan";
+    private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate, boolean addSugar){
+        String priceMessage = "Name: " + name;
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nAdd sugar? " + addSugar;
