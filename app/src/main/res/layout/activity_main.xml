@@ -54,6 +54,16 @@
 
     <CheckBox
 
+        android:id="@+id/sugar_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:layout_marginBottom="10dp"
+        android:text="Sugar"
+        android:textSize="16sp"/>
+
+    <CheckBox
+
         android:id="@+id/chocolate_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,12 +74,12 @@
 
     <CheckBox
 
-        android:id="@+id/sugar_checkbox"
+        android:id="@+id/caramel_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="24dp"
         android:layout_marginBottom="30dp"
-        android:text="Sugar"
+        android:text="Caramel"
         android:textSize="16sp"/>
 
     <TextView

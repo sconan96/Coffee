@@ -61,9 +61,13 @@ public class MainActivity extends ActionBarActivity {
         boolean hasChocolate = ChocolateCheckBox. isChecked();
         Log.v("MainActivity", "Has chocolate: " + hasChocolate);
 
+        CheckBox CaramelCheckBox = (CheckBox) findViewById(R.id.caramel_checkbox);
+        boolean hasCaramel = CaramelCheckBox. isChecked();
+        Log.v("MainActivity", "Has caramel: " + hasCaramel);
+
         int price = calculatePrice();
 
-        String priceMessage = createOrderSummary(name, price, hasCream, hasSugar, hasChocolate);
+        String priceMessage = createOrderSummary(name, price, hasCream, hasSugar, hasChocolate, hasCaramel);
         displayMessage(priceMessage);
 
         calculatePrice();
@@ -79,11 +83,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-    private String createOrderSummary(String name, int price, boolean addCream, boolean addSugar, boolean addChocolate){
+    private String createOrderSummary(String name, int price, boolean addCream, boolean addSugar, boolean addChocolate, boolean addCaramel){
         String priceMessage = "Name: " + name;
-        priceMessage += "\nAdd cream? " + addCream;
-        priceMessage += "\nAdd sugar? " + addSugar;
-        priceMessage += "\nAdd chocolate? " + addChocolate;
+        priceMessage += "\nAdd Cream? " + addCream;
+        priceMessage += "\nAdd Sugar? " + addSugar;
+        priceMessage += "\nAdd Chocolate? " + addChocolate;
+        priceMessage += "\nAdd Caramel? " + addCaramel;
         priceMessage += "\nQuantity: " + quantity;
         priceMessage += "\nTotal: $" + price;
         priceMessage += "\nThank you and have a nice day!";
