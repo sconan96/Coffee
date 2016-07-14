@@ -2,6 +2,7 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -13,7 +14,7 @@ import java.text.NumberFormat;
 /**
  * This app displays an order form to order coffee.
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
 
@@ -78,8 +79,7 @@ public class MainActivity extends ActionBarActivity {
      * @return total price
      */
     private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+        return quantity *5;
     }
 
 
