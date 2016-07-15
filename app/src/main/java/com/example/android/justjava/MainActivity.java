@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     private int calculatePrice(boolean addCream, boolean addSugar, boolean addChocolate, boolean addCaramel) {
 
         int basePrice = 5;
+
         if (addCream){
             basePrice = basePrice + 1;
         }
