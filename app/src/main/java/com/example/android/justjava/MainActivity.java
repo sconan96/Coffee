@@ -66,20 +66,38 @@ public class MainActivity extends AppCompatActivity {
         boolean hasCaramel = CaramelCheckBox. isChecked();
         Log.v("MainActivity", "Has caramel: " + hasCaramel);
 
-        int price = calculatePrice();
+        int price = calculatePrice(hasCream, hasSugar, hasChocolate, hasCaramel);
 
         String priceMessage = createOrderSummary(name, price, hasCream, hasSugar, hasChocolate, hasCaramel);
         displayMessage(priceMessage);
 
-        calculatePrice();
     }
 
     /**
      * Calculates the price of the order.
      * @return total price
      */
-    private int calculatePrice() {
-        return quantity *5;
+    private int calculatePrice(boolean addCream, boolean addSugar, boolean addChocolate, boolean addCaramel) {
+
+        int basePrice = 5;
+
+        if (addCream){
+            basePrice = basePrice + 1;
+        }
+
+        if (addSugar){
+            basePrice = basePrice + 1;
+        }
+
+        if (addChocolate){
+            basePrice = basePrice + 2;
+        }
+
+        if (addCaramel){
+            basePrice = basePrice + 2;
+        }
+
+        return quantity * basePrice;
     }
 
 
